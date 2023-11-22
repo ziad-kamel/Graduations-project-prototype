@@ -1,28 +1,26 @@
 "use client";
 
-import * as z from "zod";
 import axios from "axios";
 import { Music } from "lucide-react";
-import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 import { useRouter } from "next/navigation";
-import { ChatCompletionMessageParam } from "openai/resources/chat/completions";
 
 
 import { Heading } from "@/components/heading";
+import { Loader } from "@/components/loader";
 import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { cn } from "@/lib/utils";
-import { Loader } from "@/components/loader";
 
 import { Empty } from "@/components/ui/empty";
 
 
-import { formSchema } from "./constants";
 import Sidebar from "@/components/sidebar";
+import { formSchema } from "./constants";
 
 const MusicPage = () => {
   const router = useRouter();
@@ -58,9 +56,13 @@ const MusicPage = () => {
   }
 
   return ( 
-    <div className="bruh" style={{display: "flex"}}>
+    <div className="bruh " style={{display: "flex", justifyContent:"space-between", paddingTop:"2rem"}}>
     <Sidebar/>
-    <div>
+    <div className="ayy" style={{display: "flex", justifyContent:"center", width:"85%"}}>
+
+    
+
+    <div style={{width:"75%", height:"44rem", display:"flex", justifyContent:"space-between", flexDirection:"column"}}>
       <Heading
         title="Audio Generation"
         description="Turn your prompt into music."
@@ -94,7 +96,7 @@ const MusicPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading} 
-                        placeholder="Cat meoing" 
+                        placeholder="Enter your prompt" 
                         {...field}
                         style={{color:"black", padding:"1rem"}}
                       />
@@ -102,7 +104,7 @@ const MusicPage = () => {
                   </FormItem>
                 )}
               />
-              <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+              <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon" style={{backgroundColor:"gray"}}>
                 Generate
               </Button>
             </form>
@@ -128,7 +130,7 @@ const MusicPage = () => {
       </div>
     </div>
 
-    
+    </div>
 
     </div>
    );
