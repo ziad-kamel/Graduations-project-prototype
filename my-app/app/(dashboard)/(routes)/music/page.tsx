@@ -56,13 +56,13 @@ const MusicPage = () => {
   }
 
   return ( 
-    <div className="bruh " style={{display: "flex", justifyContent:"space-between", paddingTop:"2rem"}}>
+    <div className="flex justify-between pt-4" >
     <Sidebar/>
-    <div className="ayy" style={{display: "flex", justifyContent:"center", width:"85%"}}>
+    <div className="flex justify-center w-10/12" >
 
     
 
-    <div style={{width:"75%", height:"44rem", display:"flex", justifyContent:"space-between", flexDirection:"column"}}>
+    <div className = "w-9/12 ">
       <Heading
         title="Audio Generation"
         description="Turn your prompt into music."

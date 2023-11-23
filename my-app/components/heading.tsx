@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
-import Sidebar from "./sidebar";
 
 
 
@@ -25,7 +24,7 @@ export const Heading = (
 return (
     
     
-    <div className="px-4 lg:px-8 flex
+    <div className="py-4 px-4 lg:px-8 flex
     items-center gap-x-3 mb-8">
         
         <div className={cn("p-2 w-fit rounded-md", bgcolor)}>
